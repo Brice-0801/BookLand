@@ -6,46 +6,42 @@ use App\Entity\Trait\CreatedAtTrait;
 use App\Repository\CouponsRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
-use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: CouponsRepository::class)]
 class Coupons
 {
-
     use CreatedAtTrait;
 
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\Column]
-    private ?int $id = null;
+    #[ORM\Column(type: 'integer')]
+    private $id;
 
-    #[ORM\Column(length: 10, unique: true)]
-    private ?string $code = null;
+    #[ORM\Column(type: 'string', length: 10, unique: true)]
+    private $code;
 
-    #[ORM\Column(type: Types::TEXT)]
-    private ?string $description = null;
+    #[ORM\Column(type: 'text')]
+    private $description;
 
-    #[ORM\Column]
-    private ?int $discount = null;
+    #[ORM\Column(type: 'integer')]
+    private $discount;
 
-    #[ORM\Column]
-    private ?int $max_usage = null;
+    #[ORM\Column(type: 'integer')]
+    private $max_usage;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    private ?\DateTimeInterface $validity = null;
+    #[ORM\Column(type: 'datetime')]
+    private $validity;
 
-    #[ORM\Column]
-    private ?bool $is_valid = null;
+    #[ORM\Column(type: 'boolean')]
+    private $is_valid;
 
-    
-
-    #[ORM\ManyToOne(inversedBy: 'coupons')]
+    #[ORM\ManyToOne(targetEntity: CouponsTypes::class, inversedBy: 'coupons')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?CouponsTypes $coupons_types = null;
+    private $coupons_types;
 
     #[ORM\OneToMany(mappedBy: 'coupons', targetEntity: Orders::class)]
-    private Collection $orders;
+    private $orders;
 
     public function __construct()
     {
@@ -63,7 +59,7 @@ class Coupons
         return $this->code;
     }
 
-    public function setCode(string $code): static
+    public function setCode(string $code): self
     {
         $this->code = $code;
 
@@ -75,7 +71,7 @@ class Coupons
         return $this->description;
     }
 
-    public function setDescription(string $description): static
+    public function setDescription(string $description): self
     {
         $this->description = $description;
 
@@ -87,7 +83,7 @@ class Coupons
         return $this->discount;
     }
 
-    public function setDiscount(int $discount): static
+    public function setDiscount(int $discount): self
     {
         $this->discount = $discount;
 
@@ -99,7 +95,7 @@ class Coupons
         return $this->max_usage;
     }
 
-    public function setMaxUsage(int $max_usage): static
+    public function setMaxUsage(int $max_usage): self
     {
         $this->max_usage = $max_usage;
 
@@ -111,19 +107,19 @@ class Coupons
         return $this->validity;
     }
 
-    public function setValidity(\DateTimeInterface $validity): static
+    public function setValidity(\DateTimeInterface $validity): self
     {
         $this->validity = $validity;
 
         return $this;
     }
 
-    public function isIsValid(): ?bool
+    public function getIsValid(): ?bool
     {
         return $this->is_valid;
     }
 
-    public function setIsValid(bool $is_valid): static
+    public function setIsValid(bool $is_valid): self
     {
         $this->is_valid = $is_valid;
 
@@ -135,7 +131,7 @@ class Coupons
         return $this->coupons_types;
     }
 
-    public function setCouponsTypes(?CouponsTypes $coupons_types): static
+    public function setCouponsTypes(?CouponsTypes $coupons_types): self
     {
         $this->coupons_types = $coupons_types;
 
@@ -143,24 +139,24 @@ class Coupons
     }
 
     /**
-     * @return Collection<int, Orders>
+     * @return Collection|Orders[]
      */
     public function getOrders(): Collection
     {
         return $this->orders;
     }
 
-    public function addOrder(Orders $order): static
+    public function addOrder(Orders $order): self
     {
         if (!$this->orders->contains($order)) {
-            $this->orders->add($order);
+            $this->orders[] = $order;
             $order->setCoupons($this);
         }
 
         return $this;
     }
 
-    public function removeOrder(Orders $order): static
+    public function removeOrder(Orders $order): self
     {
         if ($this->orders->removeElement($order)) {
             // set the owning side to null (unless already changed)

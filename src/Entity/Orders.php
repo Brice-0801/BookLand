@@ -11,32 +11,30 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Entity(repositoryClass: OrdersRepository::class)]
 class Orders
 {
-
     use CreatedAtTrait;
 
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\Column]
-    private ?int $id = null;
+    #[ORM\Column(type: 'integer')]
+    private $id;
 
-    #[ORM\Column(length: 20, unique: true)]
-    private ?string $reference = null;
+    #[ORM\Column(type: 'string', length: 20, unique: true)]
+    private $reference;
 
-    #[ORM\ManyToOne(inversedBy: 'orders')]
-    private ?Coupons $coupons = null;
+    #[ORM\ManyToOne(targetEntity: Coupons::class, inversedBy: 'orders')]
+    private $coupons;
 
-    #[ORM\ManyToOne(inversedBy: 'orders')]
+    #[ORM\ManyToOne(targetEntity: Users::class, inversedBy: 'orders')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Users $users = null;
+    private $users;
 
     #[ORM\OneToMany(mappedBy: 'orders', targetEntity: OrdersDetails::class, orphanRemoval: true)]
-    private Collection $ordersDetails;
+    private $ordersDetails;
 
     public function __construct()
     {
         $this->ordersDetails = new ArrayCollection();
         $this->created_at = new \DateTimeImmutable();
-
     }
 
     public function getId(): ?int
@@ -49,7 +47,7 @@ class Orders
         return $this->reference;
     }
 
-    public function setReference(string $reference): static
+    public function setReference(string $reference): self
     {
         $this->reference = $reference;
 
@@ -61,7 +59,7 @@ class Orders
         return $this->coupons;
     }
 
-    public function setCoupons(?Coupons $coupons): static
+    public function setCoupons(?Coupons $coupons): self
     {
         $this->coupons = $coupons;
 
@@ -73,7 +71,7 @@ class Orders
         return $this->users;
     }
 
-    public function setUsers(?Users $users): static
+    public function setUsers(?Users $users): self
     {
         $this->users = $users;
 
@@ -81,24 +79,24 @@ class Orders
     }
 
     /**
-     * @return Collection<int, OrdersDetails>
+     * @return Collection|OrdersDetails[]
      */
     public function getOrdersDetails(): Collection
     {
         return $this->ordersDetails;
     }
 
-    public function addOrdersDetail(OrdersDetails $ordersDetail): static
+    public function addOrdersDetail(OrdersDetails $ordersDetail): self
     {
         if (!$this->ordersDetails->contains($ordersDetail)) {
-            $this->ordersDetails->add($ordersDetail);
+            $this->ordersDetails[] = $ordersDetail;
             $ordersDetail->setOrders($this);
         }
 
         return $this;
     }
 
-    public function removeOrdersDetail(OrdersDetails $ordersDetail): static
+    public function removeOrdersDetail(OrdersDetails $ordersDetail): self
     {
         if ($this->ordersDetails->removeElement($ordersDetail)) {
             // set the owning side to null (unless already changed)

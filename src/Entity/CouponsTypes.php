@@ -12,14 +12,14 @@ class CouponsTypes
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\Column]
-    private ?int $id = null;
+    #[ORM\Column(type: 'integer')]
+    private $id;
 
-    #[ORM\Column(length: 50)]
-    private ?string $name = null;
+    #[ORM\Column(type: 'string', length: 50)]
+    private $name;
 
     #[ORM\OneToMany(mappedBy: 'coupons_types', targetEntity: Coupons::class, orphanRemoval: true)]
-    private Collection $coupons;
+    private $coupons;
 
     public function __construct()
     {
@@ -36,7 +36,7 @@ class CouponsTypes
         return $this->name;
     }
 
-    public function setName(string $name): static
+    public function setName(string $name): self
     {
         $this->name = $name;
 
@@ -44,24 +44,24 @@ class CouponsTypes
     }
 
     /**
-     * @return Collection<int, Coupons>
+     * @return Collection|Coupons[]
      */
     public function getCoupons(): Collection
     {
         return $this->coupons;
     }
 
-    public function addCoupon(Coupons $coupon): static
+    public function addCoupon(Coupons $coupon): self
     {
         if (!$this->coupons->contains($coupon)) {
-            $this->coupons->add($coupon);
+            $this->coupons[] = $coupon;
             $coupon->setCouponsTypes($this);
         }
 
         return $this;
     }
 
-    public function removeCoupon(Coupons $coupon): static
+    public function removeCoupon(Coupons $coupon): self
     {
         if ($this->coupons->removeElement($coupon)) {
             // set the owning side to null (unless already changed)
