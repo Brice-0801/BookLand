@@ -34,15 +34,15 @@ class ProductsRepository extends ServiceEntityRepository
             ->setMaxResults($limit)
             ->setFirstResult(($page * $limit) - $limit);
 
-        $paginator = new Paginator($query);
-        $data = $paginator->getQuery()->getResult();
+            $paginator = new Paginator($query);
+            $data = $paginator->getQuery()->getResult();
         
-        //On vérifie qu'on a des données
-        if(empty($data)){
-            return $result;
-        }
+         // On vérifie qu'on a des données
+           if(empty($data)){
+               return $result;
+           }
 
-        //On calcule le nombre de pages
+        // On calcule le nombre de pages
         $pages = ceil($paginator->count() / $limit);
 
         // On remplit le tableau
