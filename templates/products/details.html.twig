@@ -25,9 +25,10 @@
     {% for image in products.images %}
 
       <div class="carousel-item {{ (loop.first) ? 'active' : '' }}">
-          <img src="{{ asset('assets/uploads/bd.jpg') ~ image.name }}"
+          <img src="{{ asset('assets/uploads/') ~ image.name }}"
            class="d-block w-100" alt=" {{ products.name }}">
       </div>
+
     {% endfor %}
 
   </div>
@@ -45,7 +46,7 @@
     <div class="col-6">
         <p> {{ products.description }} </p>
         <p> Catégorie: {{ products.categories.name }} </p>
-        <p> prix: {{ products.price / 100}} </p>
+        <p>Prix : {{ (products.price / 100)|number_format(2, '.', ',') }} €</p>
         {% if products.stock > 0 %}
             <a href="#" class="btn btn-success"> Ajouter au panier </a>
         {% else %}

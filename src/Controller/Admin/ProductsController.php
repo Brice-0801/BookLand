@@ -26,7 +26,8 @@ class ProductsController extends AbstractController
     }
 
     #[Route('/ajout', name: 'add')]
-    public function add(Request $request, EntityManagerInterface $em, SluggerInterface $slugger, PictureService $pictureService): Response
+    public function add(Request $request, EntityManagerInterface $em,
+     SluggerInterface $slugger): Response
     {
         $this->denyAccessUnlessGranted('ROLE_ADMIN');
 
@@ -39,30 +40,30 @@ class ProductsController extends AbstractController
         // On traite la requête du formulaire
         $productForm->handleRequest($request);
 
-        //On vérifie si le formulaire est soumis ET valide
+        // On vérifie si le formulaire est soumis et valide
         if($productForm->isSubmitted() && $productForm->isValid()){
             // On récupère les images
-            $images = $productForm->get('images')->getData();
+            // $images = $productForm->get('images')->getData();
             
-            foreach($images as $image){
-                // On définit le dossier de destination
-                $folder = 'products';
+            // foreach($images as $image){
+            //     // On définit le dossier de destination
+            //     $folder = 'products';
 
-                // On appelle le service d'ajout
-                $fichier = $pictureService->add($image, $folder, 300, 300);
+            //     // On appelle le service d'ajout
+            //     $fichier = $pictureService->add($image, $folder, 300, 300);
 
-                $img = new Images();
-                $img->setName($fichier);
-                $product->addImage($img);
-            }
+            //     $img = new Images();
+            //     $img->setName($fichier);
+            //     $product->addImage($img);
+            // }
 
             // On génère le slug
             $slug = $slugger->slug($product->getName());
             $product->setSlug($slug);
 
             // On arrondit le prix 
-            // $prix = $product->getPrice() * 100;
-            // $product->setPrice($prix);
+            $prix = $product->getPrice() * 100;
+            $product->setPrice($prix);
 
             // On stocke
             $em->persist($product);
@@ -90,8 +91,8 @@ class ProductsController extends AbstractController
         $this->denyAccessUnlessGranted('PRODUCT_EDIT', $product);
 
         // On divise le prix par 100
-        // $prix = $product->getPrice() / 100;
-        // $product->setPrice($prix);
+        $prix = $product->getPrice() / 100;
+        $product->setPrice($prix);
 
         // On crée le formulaire
         $productForm = $this->createForm(ProductsFormType::class, $product);
@@ -102,21 +103,20 @@ class ProductsController extends AbstractController
         //On vérifie si le formulaire est soumis ET valide
         if($productForm->isSubmitted() && $productForm->isValid()){
             // On récupère les images
-            $images = $productForm->get('images')->getData();
+            // $images = $productForm->get('images')->getData();
 
-            foreach($images as $image){
-                // On définit le dossier de destination
-                $folder = 'products';
+            // foreach($images as $image){
+            //     // On définit le dossier de destination
+            //     $folder = 'products';
 
-                // On appelle le service d'ajout
-                $fichier = $pictureService->add($image, $folder, 300, 300);
+            //     // On appelle le service d'ajout
+            //     $fichier = $pictureService->add($image, $folder, 300, 300);
 
-                $img = new Images();
-                $img->setName($fichier);
-                $product->addImage($img);
-            }
-            
-            
+            //     $img = new Images();
+            //     $img->setName($fichier);
+            //     $product->addImage($img);
+            // }
+                       
             // On génère le slug
             $slug = $slugger->slug($product->getName());
             $product->setSlug($slug);

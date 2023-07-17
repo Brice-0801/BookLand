@@ -26,6 +26,12 @@ class CategoriesFixtures extends Fixture
         $this->createCategory('Western', $parent, $manager);
         $this->createCategory('Humoristique', $parent, $manager);
         $this->createCategory('Fantasy', $parent, $manager);
+
+        $parent = $this->createCategory('Mangas', null, $manager);
+
+        $this->createCategory('Shonen', $parent, $manager);
+        $this->createCategory('Seinen', $parent, $manager);
+        $this->createCategory('Shojo', $parent, $manager);
                 
         $manager->flush();
     }
