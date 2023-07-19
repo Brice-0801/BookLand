@@ -84,7 +84,8 @@ class ProductsController extends AbstractController
     }
 
     #[Route('/edition/{id}', name: 'edit')]
-    public function edit(Products $product, Request $request, EntityManagerInterface $em, SluggerInterface $slugger, PictureService $pictureService): Response
+    public function edit(Products $product, Request $request, EntityManagerInterface $em,
+     SluggerInterface $slugger, PictureService $pictureService): Response
     {
         // On vérifie si l'utilisateur peut éditer avec le Voter
         $this->denyAccessUnlessGranted('PRODUCT_EDIT', $product);

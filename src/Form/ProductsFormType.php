@@ -8,8 +8,12 @@ use App\Entity\Products;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\All;
+use Symfony\Component\Validator\Constraints\Image;
+use Symfony\Component\Validator\Constraints\Positive;
 
 class ProductsFormType extends AbstractType
 {
@@ -21,8 +25,14 @@ class ProductsFormType extends AbstractType
             ])
             ->add('description')
 
-            ->add('price', options: [
-                'label' => 'Prix'
+            ->add('price', MoneyType::class, options: [
+                'label' => 'Prix',
+                'divisor' => 100,
+                'constraints' =>[
+                    new Positive(
+                        message : 'Le prix doit être positif'
+                    )
+                ]
             ])
             ->add('stock', options:[
                 'label' =>'Unités en stock'
@@ -43,7 +53,17 @@ class ProductsFormType extends AbstractType
                 'label' => false,
                 'multiple' => true,
                 'mapped' => false,
-                'required' => false
+                'required' => false,
+                'constraints' => [
+                    new All(
+
+                        new Image([
+                            'maxWidth' => 1280,
+                            'maxWidthMessage' => 'L\'image doit faire 
+                            au maximum {{ max_width }} pixels'
+                             ])
+                    )     
+                ]
             ])
         ;
     }

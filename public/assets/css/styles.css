@@ -1,0 +1,11 @@
+/* P A G I N A T I O N */
+ 
+.row {
+    justify-content: center;
+}
+
+.page-item {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
