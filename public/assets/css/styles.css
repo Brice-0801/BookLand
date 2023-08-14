@@ -209,15 +209,30 @@ footer {
 
 /* A  P R O P O S */
 
-.imgAPropos {
+/* .imgAPropos {
     display: flex;
     align-items: center;
     width: 60%;
     height: 500px;
     padding: 20px;
     border-radius: 20px;
- 
-}
+} */
+
+.containerAbout {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .columnAbout {
+    flex: 1;
+    padding: 20px;
+  }
+
+  .imgAPropos {
+    max-width: 100%;
+    height: auto;
+  }
 
 /* FIN A  P R O P O S */
 
