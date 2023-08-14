@@ -1,3 +1,8 @@
+/* body {
+    display: flex;
+    flex-direction: column;
+} */
+
 /* B A R R E  G R E E N */
 
 .barregreen {
@@ -38,37 +43,102 @@ a {
 
 /* F O O T E R */
 
-.footer {
-    width: auto;
-    height: 68px;
+footer {
     flex-shrink: 0;
+    border-top: 1px dashed #000;
+    width: 100%;
     background-color: #40826D;
+    color: white;
 }
 
-.MapIcon {
+.contenu-footer {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* aligner en haut */
+    padding: 50px 0 100px;
+}
+
+.blocf {
+    width: 25%;
+    margin: 0 30px;
+}
+
+.footer-contact h3,
+.footer-services h3,
+.footer-horaires h3,
+.footer-medias h3 {
+    font-size: 25px;
+    padding-bottom: 20px;
+}
+
+.footer-contact p {
+    padding: 5px 0;
+}
+
+.liste-services,
+.liste-horaires,
+.liste-medias {
+    list-style-type: none;
+}
+
+.liste-services li {
+    padding: 2px 0;
+}
+
+.liste-services a {
+    text-decoration: none;
+}
+
+.liste-medias img {
     width: 40px;
-    height: 50%;
-    padding-top: 10px;
-    margin-right: 80%;
+    margin: 10px 10px;
 }
 
-.icon-container {
-    text-align: center;
-    margin-top: 10px;
+.liste-medias a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 25px;
 }
 
-.SocialIcon {
-    display: inline-block;
-    width: 30px;
-    height: 50%;
-    padding-top: 10px;
-    margin: 10px;
+@media screen and (max-width: 1300px) {
+    .contenu-footer {
+        width: 700px;
+        flex-wrap: wrap;
+    }
+
+    .blocf {
+        width: 40%;
+        margin: 0 0;
+    }
+
+    .blocf:nth-child(1),
+    .blocf:nth-child(2) {
+        margin-bottom: 50px;
+    }
 }
 
-a {
-    text-decoration: none; 
-  }
+@media screen and (max-width: 800px) {
+    .contenu-footer {
+        width: 320px;
+    }
 
+    .blocf {
+        width: 300px;
+        margin: 30px 30px;
+    }
+
+    .blocf:nth-child(1),
+    .blocf:nth-child(2) {
+        margin-bottom: 30px;
+    }
+
+    .blocf:nth-child(1) {
+        margin-top: 0;
+    }
+}
 
 /* FIN F O O T E R */
 
@@ -136,6 +206,20 @@ a {
 }
 
 /* FIN D É T A I L S  P R O D U I T S */
+
+/* A  P R O P O S */
+
+.imgAPropos {
+    display: flex;
+    align-items: center;
+    width: 60%;
+    height: 500px;
+    padding: 20px;
+    border-radius: 20px;
+ 
+}
+
+/* FIN A  P R O P O S */
 
 /* I N S C R I P T I O N */
 
