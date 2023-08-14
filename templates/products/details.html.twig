@@ -36,15 +36,20 @@
                     </button>
                 </div>
             </div>
+            </div>
             <div class="col-6">
-                <p>{{ products.description }}</p>
-                <p>Catégorie : {{ products.categories.name }}</p>
-                <p>Prix : {{ products.price / 100 }} €</p>
-                {% if products.stock > 0 %}
-                    <a href="{{ path('cart_add', {id: products.id}) }}" class="btn btn-success">Ajouter au panier</a>
-                {% else %}
-                    <p class="text-danger">Temporairement en rupture de stock</p>
-                {% endif %}
+
+               <div class="blocdétails">
+                   <p> Description : {{ products.description }}</p>
+                   <p> Catégorie : {{ products.categories.name }}</p>
+                   <p> Prix : {{ products.price / 100 }} €</p>
+                </div>
+
+                      {% if products.stock > 0 %}
+                         <a href="{{ path('cart_add', {id: products.id}) }}" class="btn btn-success">Ajouter au panier</a>
+                      {% else %}
+                         <p class="text-danger">Temporairement en rupture de stock</p>
+                      {% endif %}
             </div>
         </section>
     </main>

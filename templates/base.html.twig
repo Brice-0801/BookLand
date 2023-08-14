@@ -9,7 +9,11 @@
 		<!-- Feuilles de styles -->
 		<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
         {% block stylesheets %}{% endblock %}
-		<link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
+	    <link rel="stylesheet" href="{{ asset('assets/css/styles.css')}}">
+		{# <link rel="stylesheet" href="{{ asset('assets/css/accueil.css') }}">
+		<link rel="stylesheet" href="{{ asset('assets/css/categorie.css') }}">
+		<link rel="stylesheet" href="{{ asset('assets/css/produit.css') }}">
+		<link rel="stylesheet" href="{{ asset('assets/css/détailsproduit.css') }}"> #}
 
 		<!-- Fichiers JS -->
 		<script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}" defer></script>
@@ -17,7 +21,13 @@
 		<script src="{{ asset('assets/js/scripts.js') }}" defer></script>
 	</head>
 	<body>
+
+	        <div class="barregreen">
+                <p> 1er vendeur de livres de France </p>
+
         {% include "_partials/_nav.html.twig" %}
+
+		    </div>
         
 		{% if app.user and app.user.isVerified == false %}
 			<div class="alert alert-warning alert-dismissible" role="alert">

@@ -1,5 +1,32 @@
+/* B A R R E  G R E E N */
+
+.barregreen {
+    background-color: #40826D;
+    color: white;
+    text-align: center;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding-top: 10px;
+}
+
+/* FIN B A R R E  G R E E N */
+
+/* N A V B A R  */
+
+nav {
+    background-color: #E9D2C0;
+    color: white;
+}
+
+a {
+    color: white;
+}
+
+/* FIN N A V B A R  */
+
 /* P A G I N A T I O N */
- 
+
 .row {
     justify-content: center;
 }
@@ -9,3 +36,134 @@
     margin-right: 5px;
 }
 
+/* F O O T E R */
+
+.footer {
+    width: auto;
+    height: 68px;
+    flex-shrink: 0;
+    background-color: #40826D;
+}
+
+.MapIcon {
+    width: 40px;
+    height: 50%;
+    padding-top: 10px;
+    margin-right: 80%;
+}
+
+.icon-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.SocialIcon {
+    display: inline-block;
+    width: 30px;
+    height: 50%;
+    padding-top: 10px;
+    margin: 10px;
+}
+
+a {
+    text-decoration: none; 
+  }
+
+
+/* FIN F O O T E R */
+
+
+/* A C C U E I L */
+
+.f {
+    justify-content: center;
+    display: flex;
+}
+
+.Bannière {
+    width: 50%;
+    margin-top: 2%;
+    border-radius: 20px;
+}
+
+.col-4 {
+    width: 15%;
+    height: 40%;
+    margin-top: 20px;
+    border-radius: 20px;
+    background: #E9D2C0;
+    margin: 20px;
+    color: #FFF;
+    font-size: 100%;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    top: 30px;
+}
+
+.offre {
+    margin-top: 35px;
+}
+
+.iconoffre {
+    width: 30px;
+    height: 35px;
+    margin-top: 20px;
+}
+
+/* FIN A C C U E I L */
+
+/* C A T É G O R I E */
+
+.titreCatégorie {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* FIN C A T É G O R I E */
+
+/* P R O D U I T */
+
+
+
+/* FIN P R O D U I T */
+
+/* D É T A I L S  P R O D U I T S */
+
+.blocdétails {
+    background-color: #F5F5F5;
+    padding: 30px;
+}
+
+/* FIN D É T A I L S  P R O D U I T S */
+
+/* I N S C R I P T I O N */
+
+.Inscription {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.formInscription {
+    background-color: #F5F5F5;
+    margin-top: 20px;
+    padding: 30px;
+}
+
+
+/* FIN I N S C R I P T I O N */
+
+/* C O N N E C T I O N */
+
+.Connection {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.formConnection {
+    background-color: #F5F5F5;
+    margin-top: 20px;
+    padding: 30px;
+}
+
+/* FIN C O N N E C T I O N */
