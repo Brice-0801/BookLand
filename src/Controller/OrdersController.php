@@ -56,8 +56,9 @@ class OrdersController extends AbstractController
         $em->persist($order);
         $em->flush();
 
-        return $this->render('orders/index.html.twig', [
-            'controller_name' => 'OrdersController',
-        ]);
+        $session->remove('panier');
+
+        $this->addFlash('message', 'Commande créée avec succès');
+        return $this->redirectToRoute('main');
     }
 }

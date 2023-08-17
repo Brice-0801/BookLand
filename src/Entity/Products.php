@@ -157,6 +157,7 @@ class Products
     /**
      * @return Collection|OrdersDetails[]
      */
+    
     public function getOrdersDetails(): Collection
     {
         return $this->ordersDetails;
