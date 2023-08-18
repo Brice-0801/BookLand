@@ -43,6 +43,10 @@ a {
     margin-right: 5px;
 }
 
+.pagination {
+    justify-content: center;
+}
+
 /* F O O T E R */
 
 footer {
@@ -64,7 +68,7 @@ footer {
 
 .blocf {
     width: 25%;
-    margin: 0 30px;
+    margin: 0;
 }
 
 .footer-contact h3,
@@ -203,6 +207,9 @@ footer {
 
 /* P R O D U I T */
 
+.PasImage {
+    background-color: #E9D2C0; 
+}
 
 
 /* FIN P R O D U I T */
@@ -236,6 +243,20 @@ span {
 }
 
 /* FIN A  P R O P O S */
+
+/* C O N T A C T */
+
+.Map {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.Map iframe {
+    display: block;
+    margin: 0 auto;   
+}
+
+/* FIN C O N T A C T */
 
 /* I N S C R I P T I O N */
 

@@ -21,7 +21,7 @@ class CategoriesController extends AbstractController
 
         //On va chercher la liste des produits de la catégorie
         $products = $productsRepository->findProductsPaginated
-        ($page, $category->getSlug(), 3);
+        ($page, $category->getSlug(), 2);
         
         return $this->render('categories/list.html.twig', [
              'category' => $category,

@@ -20,17 +20,23 @@
 				</li>
 			</ul>
 			<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+			
 				{% if app.user %}
-				  {%  if is_granted('ROLE_PRODUCT_ADMIN') %}
+				  {# {%  if is_granted('ROLE_PRODUCT_ADMIN') %}
 				      <li class="nav-item">
 					      <a class="nav-link text-light" href="{{ path('admin') }}"> Administration </a>
 					  </li>
-				  {% endif %}
+				  {% endif %} #}
                     <li class="nav-item">
                         <a class="nav-link text-light" href="#">Mon compte</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="{{ path('app_logout') }}">Me déconnecter</a>
+                        <a class="nav-link text-light" href="{{ path('app_logout') }}"> Déconnexion </a>
+                    </li>
+					<li class="nav-item">
+                        <a class="nav-link text-light" href="{{ path('cart_index') }}">
+						   <img src="{{ asset('assets/icons/panier.svg') }}" alt="Panier" class="Panier">
+						</a> 
                     </li>
                 {% else %}
                     <li class="nav-item">
@@ -38,11 +44,6 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light" href="{{ path('app_login') }}"> Connection </a>
-                    </li>
-					<li class="nav-item">
-                        <a class="nav-link text-light" href="{{ path('cart_index') }}">
-						   <img src="{{ asset('../../../../assets/icons/panier.svg') }}" alt="Panier">
-						</a> 
                     </li>
 				{% endif %}
 			</ul>
