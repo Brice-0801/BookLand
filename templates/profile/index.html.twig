@@ -1,20 +1,44 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ProfileController!{% endblock %}
+{% block title %} Mon compte {% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+ <section class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="Profil"> Bonjour,  {{ (app.user.lastname) }} {{ (app.user.firstname) }} </h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/opt/lampp/htdocs/BookLand/BookLand/src/Controller/ProfileController.php'|file_link(0) }}">src/Controller/ProfileController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/opt/lampp/htdocs/BookLand/BookLand/templates/profile/index.html.twig'|file_link(0) }}">templates/profile/index.html.twig</a></code></li>
-    </ul>
-</div>
+                <div class="formProfil">
+
+                    {{ form_start(form) }}
+
+                    <fieldset class="mb-3">
+                        <legend>Mon identité</legend>
+                            {{ form_label(form.email) }}
+                            {{ form_widget(form.email) }}
+                            {{ form_label(form.lastname) }}
+                            {{ form_widget(form.lastname) }}
+                            {{ form_label(form.firstname) }}
+                            {{ form_widget(form.firstname) }}
+                    </fieldset>
+
+                    <fieldset class="mb-3">
+                        <legend>Mes coordonnées</legend>
+                            {{ form_label(form.address) }}
+                            {{ form_widget(form.address) }}
+                            {{ form_label(form.zipcode) }}
+                            {{ form_widget(form.zipcode) }}
+                            {{ form_label(form.city) }}
+                            {{ form_widget(form.city) }}
+                    </fieldset>
+
+                            {{ form_rest(form) }}
+                            <button type="submit" class="btn btn-secondary btn-lg my-3"> Modifier </button>
+                            {{ form_end(form) }}
+
+                </div>          
+            </div>
+        </div>
+    </section>
 {% endblock %}

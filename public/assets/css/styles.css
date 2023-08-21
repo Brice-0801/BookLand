@@ -31,10 +31,11 @@ a {
 }
 
 .Panier {
-    width: 20px;
-    height: 20px;
-    fill: white;
+    width: 25px;
+    height: 25px;
+
 }
+
 
 /* FIN N A V B A R  */
 
@@ -190,7 +191,7 @@ footer {
 }
 
 .offre {
-    margin-top: 35px;
+    margin-top: 30px;
 }
 
 .iconoffre {
@@ -248,7 +249,7 @@ span {
     font-weight: 700;
 }
 
-/* FIN A  P R O P O S */
+/* FIN A P R O P O S */
 
 /* C O N T A C T */
 
@@ -296,3 +297,19 @@ span {
 }
 
 /* FIN C O N N E C T I O N */
+
+/* P R O F I L */
+
+.Profil {
+    text-align: center;
+    margin-top: 20px;
+    font-family: 'Itim', cursive;
+}
+
+.formProfil {
+    background-color: #F5F5F5;
+    margin-top: 20px;
+    padding: 30px;
+}
+
+/* FIN P R O F I L */
