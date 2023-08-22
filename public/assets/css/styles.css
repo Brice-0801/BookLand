@@ -191,7 +191,7 @@ footer {
 }
 
 .offre {
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .iconoffre {
@@ -210,12 +210,18 @@ footer {
     font-family: 'Itim', cursive;
 }
 
+.cardCatégorie {
+    color: white;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
 /* FIN C A T É G O R I E */
 
 /* P R O D U I T */
 
 .PasImage {
-    background-color: #E9D2C0; 
+    background-color: #E9D2C0 !important;
 }
 
 
