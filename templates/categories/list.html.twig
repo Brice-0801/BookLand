@@ -18,7 +18,7 @@
                         <article class="card h-100">
                             {% if product.images[0] is defined %}
                                 <div class="card-product-miniature">
-                                    <img src="{{ asset('assets/uploads/products/mini/300x300-' ~ product.images[0].name )}}" 
+                                    <img src="{{ asset('assets/uploads/products/' ~ product.images[0].name )}}" 
                                     class="card-img-top" alt="{{ product.name }}">
                                 </div>
                             {% else %}
