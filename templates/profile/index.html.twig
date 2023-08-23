@@ -7,12 +7,14 @@
  <section class="container">
         <div class="row">
             <div class="col">
+             {# Variable pour le front dynamique #} 
                 {% set currentHour = "now"|date("H") %}
                 {% if currentHour < 20 %}
                 <h1 class="Profil"> Bonjour,  {{ (app.user.lastname) }} {{ (app.user.firstname) }} </h1>
                 {% else %}
                 <h1 class="Profil"> Bonsoir,  {{ (app.user.lastname) }} {{ (app.user.firstname) }} </h1>
                 {% endif %}
+             {# Variable pour le front dynamique #} 
 
                 <div class="formProfil">
 

@@ -16,27 +16,27 @@ class AccountType extends AbstractType
         $builder
 
             ->add('email', EmailType::class, [
-                'attr' => ['class' => 'form-control', 'placeholder' => 'E-mail'],
+                'attr' => ['class' => 'form-control', 'placeholder' => ''],
                 'label' => false,
             ])
             ->add('lastname', TextType::class, [
-                'attr' => ['class' => 'form-control', 'placeholder' => 'Nom'],
+                'attr' => ['class' => 'form-control', 'placeholder' => ''],
                 'label' => false,
             ])
             ->add('firstname', TextType::class, [
-                'attr' => ['class' => 'form-control', 'placeholder' => 'Prénom'],
+                'attr' => ['class' => 'form-control', 'placeholder' => ''],
                 'label' => false,
             ])
             ->add('address', TextType::class, [
-                'attr' => ['class' => 'form-control', 'placeholder' => 'Adresse'],
+                'attr' => ['class' => 'form-control', 'placeholder' => ''],
                 'label' => false,
             ])
             ->add('zipcode', TextType::class, [
-                'attr' => ['class' => 'form-control', 'placeholder' => 'Code postal'],
+                'attr' => ['class' => 'form-control', 'placeholder' => ''],
                 'label' => false,
             ])
             ->add('city', TextType::class, [
-                'attr' => ['class' => 'form-control', 'placeholder' => 'Ville'],
+                'attr' => ['class' => 'form-control', 'placeholder' => ''],
                 'label' => false,
             ])
 

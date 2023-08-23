@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Categories;
+use App\Entity\Contact;
 use App\Entity\Images;
 use App\Entity\Orders;
 use App\Entity\OrdersDetails;
@@ -55,5 +56,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Images', 'fa-regular fa-image', Images::class);
         yield MenuItem::linkToCrud('Orders', 'fa-solid fa-cart-plus', Orders::class);
         yield MenuItem::linkToCrud('OrdersDetails', 'fa-solid fa-circle-info', OrdersDetails::class);
+        yield MenuItem::linkToCrud('Contact', 'fa fa-envelope', Contact::class);
     }
 }

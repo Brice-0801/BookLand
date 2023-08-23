@@ -259,9 +259,22 @@ span {
 
 /* C O N T A C T */
 
+.formContact {
+    background-color: #F5F5F5;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+
+.TitreContact {
+    font-family: 'Itim', cursive;
+    text-align: center;
+}
+
 .Map {
     text-align: center;
     margin-top: 30px;
+    margin-left: 40px;
 }
 
 .Map iframe {
