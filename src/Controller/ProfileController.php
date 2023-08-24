@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/profil', name: 'profile_')]
 class ProfileController extends AbstractController
 {
-    #[Route('/', name: 'index')]
+    #[Route('/', name: 'edit')]
     public function index(Request $request, EntityManagerInterface $entityManager): Response
     {
 
@@ -32,15 +32,40 @@ class ProfileController extends AbstractController
             return $this->redirectToRoute('main');
         }
 
-        return $this->render('profile/index.html.twig', [
+        return $this->render('profile/edit.html.twig', [
             'form' => $form->createView()
         ]);
     }
 
+    // #[Route('/', name: 'edit_password')]
+    // public function index(Request $request, EntityManagerInterface $entityManager): Response
+    // {
+
+    //     $user = $this->getUser(); // Récupérer l'utilisateur connecté
+
+    //     // Créer le formulaire en passant l'utilisateur comme données
+    //     $form = $this->createForm(AccountType::class, $user);
+
+    //     $form->handleRequest($request);
+
+    //     if ($form->isSubmitted() && $form->isValid()) {
+    //         // Mise à jour des données de l'utilisateur
+    //         $entityManager->persist($user);;
+    //         $entityManager->flush(); // Sauvegarde les modifications dans la base de données
+
+    //         $this->addFlash('success', 'Vos informations ont été mises à jour avec succès !');
+    //         return $this->redirectToRoute('main');
+    //     }
+
+    //     return $this->render('profile/edit_password.html.twig', [
+    //         'form' => $form->createView()
+    //     ]);
+    // }
+
     #[Route('/commandes', name: 'orders')]
     public function orders(): Response
     {
-        return $this->render('profile/index.html.twig', [
+        return $this->render('profile/edit.html.twig', [
             'controller_name' => 'Commande de l\'utilisateur',
         ]);
     }

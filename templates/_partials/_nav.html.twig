@@ -1,50 +1,80 @@
 <nav class="navbar navbar-expand-lg navbar-light">
 	<div class="container-fluid">
-		<a class="navbar-brand text-light" {# href="{{ path('main') }}" #}> BookLand </a>
+		<a class="navbar-brand text-light" {# href="{{ path('main') }}" #}>
+			BookLand
+		</a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon custom-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 				<li class="nav-item">
-					<a class="nav-link active text-light" aria-current="page" href="{{ path('home') }}"> Accueil</a>
+					<a class="nav-link active text-light" aria-current="page" href="{{ path('home') }}">
+						Accueil</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link text-light" href="{{ path('main') }}"> Catégorie </a>
+					<a class="nav-link text-light" href="{{ path('main') }}">
+						Catégorie
+					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link text-light" href="{{ path('about') }}"> A Propos </a>
+					<a class="nav-link text-light" href="{{ path('about') }}">
+						A Propos
+					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link text-light" href="{{ path('contact') }}"> Contactez-nous </a>
+					<a class="nav-link text-light" href="{{ path('contact') }}">
+						Contactez-nous
+					</a>
 				</li>
 			</ul>
 			<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-			
+
 				{% if app.user %}
-				  {%  if is_granted('ROLE_PRODUCT_ADMIN') %}
-				      <li class="nav-item">
-					      <a class="nav-link text-light" href="{{ path('admin') }}"> Administration </a>
-					  </li>
-				  {% endif %}
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="{{ path('profile_index') }}"> Profil </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="{{ path('app_logout') }}"> Déconnexion </a>
-                    </li>
+					{%  if is_granted('ROLE_PRODUCT_ADMIN') %}
+						<li class="nav-item">
+							<a class="nav-link text-light" href="{{ path('admin') }}">
+								Administration
+							</a>
+						</li>
+					{% endif %}
+					<li class="nav-item dropdown">
+						<a class="nav-link text-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							{# {{ app.user.lastname }} {{ app.user.firstname }}  #} Profil
+						</a>
+						<ul class="dropdown-menu">
+							<li>
+								<a class="dropdown-item" href="{{ path('profile_edit') }}"> Modifier mes informations </a>
+							</li>
+							<li>
+								<a class="dropdown-item" href=""> Modifier mon mot de passe </a>
+							</li>
+						</ul>
+					</li>
+					{# <li class="nav-item">
+					                        <a class="nav-link text-light" href="{{ path('profile_index') }}"> Profil </a>
+					</li> #}
 					<li class="nav-item">
-                        <a class="nav-link text-light" href="{{ path('cart_index') }}">
-						   <img src="{{ asset('assets/icons/panier.svg') }}" alt="Panier" class="Panier">
-						</a> 
-                    </li>
-                {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="{{ path('app_register') }}"> Inscription </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="{{ path('app_login') }}"> Connection </a>
-                    </li>
+						<a class="nav-link text-light" href="{{ path('app_logout') }}">
+							Déconnexion
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-light" href="{{ path('cart_index') }}">
+							<img src="{{ asset('assets/icons/panier.svg') }}" alt="Panier" class="Panier">
+						</a>
+					</li>
+				{% else %}
+					<li class="nav-item">
+						<a class="nav-link text-light" href="{{ path('app_register') }}">
+							Inscription
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-light" href="{{ path('app_login') }}">
+							Connection
+						</a>
+					</li>
 				{% endif %}
 			</ul>
 		</div>

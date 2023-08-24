@@ -19,10 +19,10 @@
                     </div>
                 {% else %}
                     <div class="col-4">
-                        <div class="cardCatégorie h-80">
+                        <div class="cardCatégorie w-100 h-80">
                             <div class="card-body">
                                 <h3 class="card-title">{{ category.name }}</h3>
-                                {# <a href="{{ path('categories_list', {slug: category.slug}) }}" class="btn btn-secondary">Voir les produits</a> #}
+                                <a href="{{ path('categories_list', {slug: category.slug}) }}" class="btn btn-secondary">Voir les produits</a>
                             </div>
                         </div> 
                     </div>    

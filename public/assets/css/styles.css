@@ -1,9 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Itim&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&display=swap');
 
-/* body {
-    display: flex;
-    flex-direction: column;
+/* html, body {
+    height: 100%;
 } */
+
+body {
+    background-color: aqua;
+    /* display: flex;
+    flex-direction: column; */
+    /* flex-grow: 1; */
+    /* display: grid;
+    grid-template-columns: auto 1fr auto; */
+}
 
 /* B A R R E  G R E E N */
 
@@ -15,6 +23,8 @@
     font-weight: 700;
     line-height: normal;
     padding-top: 10px;
+    font-family: 'Itim', cursive;
+    font-size: 17px;
 }
 
 /* FIN B A R R E  G R E E N */
@@ -28,12 +38,13 @@ nav {
 
 a {
     color: white;
+    font-family: 'Itim', cursive;
+    font-size: 20px;
 }
 
 .Panier {
     width: 25px;
     height: 25px;
-
 }
 
 
@@ -62,6 +73,10 @@ footer {
     width: 100%;
     background-color: #40826D;
     color: white;
+    font-family: 'Itim', cursive;
+    font-size: 10px;
+    align-items: flex-end;
+    /* flex-grow: 1; */
 }
 
 .contenu-footer {
@@ -71,10 +86,11 @@ footer {
     justify-content: center;
     align-items: flex-start; /* aligner en haut */
     padding: 50px 0 100px;
+    font-size: 20px;
 }
 
 .blocf {
-    width: 25%;
+    width: 45%;
   
 }
 
@@ -161,6 +177,14 @@ footer {
 
 /* FIN F O O T E R */
 
+/* C A R O U S S E L */
+
+/* .carousel-item {
+    
+} */
+
+/* FIN C A R O U S S E L */
+
 
 /* A C C U E I L */
 
@@ -170,24 +194,25 @@ footer {
 }
 
 .Bannière {
-    width: 50%;
+    width: 50vw;
     margin-top: 2%;
     border-radius: 20px;
 }
 
 .col-4 {
-    width: 15%;
-    height: 40%;
+    width: 10vw;
+    height: 15vh;
     margin-top: 20px;
     border-radius: 20px;
     background: #E9D2C0;
     margin: 20px;
     color: #FFF;
-    font-size: 100%;
+    font-size: 20px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
     top: 30px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .offre {
@@ -263,6 +288,8 @@ span {
     background-color: #F5F5F5;
     margin-top: 20px;
     padding: 20px;
+    border-radius: 20px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 
@@ -292,16 +319,35 @@ span {
     font-family: 'Itim', cursive;
 }
 
+.centerForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .formInscription {
     background-color: #F5F5F5;
     margin-top: 20px;
+    margin-bottom: 30px;
     padding: 30px;
+    border-radius: 20px;
+    width: 50vw;   
+    font-family: 'Montserrat', sans-serif;
 }
-
 
 /* FIN I N S C R I P T I O N */
 
 /* C O N N E C T I O N */
+
+legend {
+    font-weight: 600;
+}
+
+.centerForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .Connection {
     text-align: center;
@@ -312,7 +358,12 @@ span {
 .formConnection {
     background-color: #F5F5F5;
     margin-top: 20px;
+    margin-bottom: 30px;
     padding: 30px;
+    border-radius: 20px;
+    font-family: 'Montserrat', sans-serif;
+    width: 30vw;
+    /* height: 30px; */
 }
 
 /* FIN C O N N E C T I O N */
@@ -325,10 +376,21 @@ span {
     font-family: 'Itim', cursive;
 }
 
+.centerForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .formProfil {
     background-color: #F5F5F5;
+    /* width: px; */
     margin-top: 20px;
+    margin-bottom: 30px;
     padding: 30px;
+    border-radius: 20px;
+    font-family: 'Montserrat', sans-serif;
+    
 }
 
 /* FIN P R O F I L */
