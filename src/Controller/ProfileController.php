@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Form\AccountPasswordType;
 use App\Form\AccountType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -13,7 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ProfileController extends AbstractController
 {
     #[Route('/', name: 'edit')]
-    public function index(Request $request, EntityManagerInterface $entityManager): Response
+    public function editProfil(Request $request, EntityManagerInterface $entityManager): Response
     {
 
         $user = $this->getUser(); // Récupérer l'utilisateur connecté
@@ -37,30 +38,30 @@ class ProfileController extends AbstractController
         ]);
     }
 
-    // #[Route('/', name: 'edit_password')]
-    // public function index(Request $request, EntityManagerInterface $entityManager): Response
-    // {
+    #[Route('/edit-pwd', name: 'edit_password')]
+    public function editPassword(Request $request, EntityManagerInterface $entityManager): Response
+    {
 
-    //     $user = $this->getUser(); // Récupérer l'utilisateur connecté
+        $user = $this->getUser(); // Récupérer l'utilisateur connecté
 
-    //     // Créer le formulaire en passant l'utilisateur comme données
-    //     $form = $this->createForm(AccountType::class, $user);
+        // Créer le formulaire en passant l'utilisateur comme données
+        $formModifyPassword = $this->createForm(AccountPasswordType::class, $user);
 
-    //     $form->handleRequest($request);
+        $formModifyPassword->handleRequest($request);
 
-    //     if ($form->isSubmitted() && $form->isValid()) {
-    //         // Mise à jour des données de l'utilisateur
-    //         $entityManager->persist($user);;
-    //         $entityManager->flush(); // Sauvegarde les modifications dans la base de données
+        if ($formModifyPassword->isSubmitted() && $formModifyPassword->isValid()) {
+            // Mise à jour des données de l'utilisateur
+            $entityManager->persist($user);;
+            $entityManager->flush(); // Sauvegarde les modifications dans la base de données
 
-    //         $this->addFlash('success', 'Vos informations ont été mises à jour avec succès !');
-    //         return $this->redirectToRoute('main');
-    //     }
+            $this->addFlash('success', 'Votre mot de passe a bien modifier !');
+            return $this->redirectToRoute('main');
+        }
 
-    //     return $this->render('profile/edit_password.html.twig', [
-    //         'form' => $form->createView()
-    //     ]);
-    // }
+        return $this->render('profile/edit_password.html.twig', [
+            'formModifyPassword' => $formModifyPassword->createView()
+        ]);
+    }
 
     #[Route('/commandes', name: 'orders')]
     public function orders(): Response

@@ -90,7 +90,7 @@ class RegistrationController extends AbstractController
                 $user->setIsVerified(true);
                 $em->flush($user);
                 $this->addFlash('success', 'Utilisateur activé');
-                return $this->redirectToRoute('profile_index');
+                return $this->redirectToRoute('profile_edit');
             }
         }
         // Ici un problème se pose dans le token

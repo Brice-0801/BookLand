@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Form\AccountPasswordType;
 use App\Form\ResetPasswordFormType;
 use App\Form\ResetPasswordRequestFormType;
 use App\Repository\UsersRepository;
@@ -108,7 +109,7 @@ class SecurityController extends AbstractController
         $user = $usersRepository->findOneByResetToken($token);
         
         if($user){
-            $form = $this->createForm(ResetPasswordFormType::class);
+            $form = $this->createForm(AccountPasswordType::class);
 
             $form->handleRequest($request);
 
@@ -118,7 +119,7 @@ class SecurityController extends AbstractController
                 $user->setPassword(
                     $passwordHasher->hashPassword(
                         $user,
-                        $form->get('password')->getData()
+                        $form->get('plainPassword')->getData()
                     )
                 );
                 $entityManager->persist($user);

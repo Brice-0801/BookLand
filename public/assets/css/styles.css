@@ -327,11 +327,11 @@ span {
 
 .formInscription {
     background-color: #F5F5F5;
-    margin-top: 20px;
-    margin-bottom: 30px;
+    margin-top: 70px;
+    margin-bottom: 70px;
     padding: 30px;
     border-radius: 20px;
-    width: 50vw;   
+    width: 50%; 
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -357,13 +357,18 @@ legend {
 
 .formConnection {
     background-color: #F5F5F5;
-    margin-top: 20px;
-    margin-bottom: 30px;
+    margin-top: 70px;
+    margin-bottom: 70px;
     padding: 30px;
     border-radius: 20px;
     font-family: 'Montserrat', sans-serif;
-    width: 30vw;
+    width: 50%;
     /* height: 30px; */
+}
+
+.mdpOublié {
+    color: #40826D;
+    margin-top: 20px;
 }
 
 /* FIN C O N N E C T I O N */
@@ -384,13 +389,23 @@ legend {
 
 .formProfil {
     background-color: #F5F5F5;
-    /* width: px; */
+    width: 40vw; 
     margin-top: 20px;
     margin-bottom: 30px;
     padding: 30px;
     border-radius: 20px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;   
     
 }
 
 /* FIN P R O F I L */
+
+/* R E S E T  P A S S W O R D */
+
+.reset_password {
+    text-align: center;
+    margin-top: 20px;
+    font-family: 'Itim', cursive;
+}
+
+/* FIN R E S E T  P A S S W O R D */
