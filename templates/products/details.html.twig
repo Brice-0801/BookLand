@@ -11,7 +11,7 @@
                 <h1>{{ products.name }}</h1>
             </div>
             <div class="col-6">
-                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div id="carouselExampleIndicators" class="carouselD slide" data-bs-ride="carousel">
                     <div class="carousel-indicators">
                         {% for iteration in 1..products.images|length %}
                             <button type="button" data-bs-target="#carouselExampleIndicators" 
@@ -40,13 +40,13 @@
             <div class="col-6">
 
                <div class="blocdétails">
-                   <p> Description : {{ products.description }}</p>
+                   <p> Description : {{ products.description|raw }}</p>
                    <p> Catégorie : {{ products.categories.name }}</p>
-                   <p> Prix : {{ products.price / 100 }} €</p>
+                   <p> Prix : {{ products.price }} €</p>
                 </div>
 
                       {% if products.stock > 0 %}
-                         <a href="{{ path('cart_add', {id: products.id}) }}" class="btn btn-success">Ajouter au panier</a>
+                         <a href="{{ path('cart_add', {id: products.id}) }}" class="btn btn-secondary">Ajouter au panier</a>
                       {% else %}
                          <p class="text-danger">Temporairement en rupture de stock</p>
                       {% endif %}

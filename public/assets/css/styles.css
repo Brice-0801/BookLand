@@ -4,14 +4,14 @@
     height: 100%;
 } */
 
-body {
-    background-color: aqua;
+ body {
+    /* background-color: aqua; */
     /* display: flex;
     flex-direction: column; */
     /* flex-grow: 1; */
     /* display: grid;
     grid-template-columns: auto 1fr auto; */
-}
+} 
 
 /* B A R R E  G R E E N */
 
@@ -50,6 +50,13 @@ a {
 
 /* FIN N A V B A R  */
 
+/* C A R O U S S E L */
+
+.carousel {
+    width: 100%;
+} 
+/* FIN C A R O U S S E L */
+
 /* P A G I N A T I O N */
 
 .row {
@@ -69,13 +76,16 @@ a {
 
 footer {
     flex-shrink: 0;
-    border-top: 1px dashed #000;
+    border-top: 1px  #000;
     width: 100%;
     background-color: #40826D;
     color: white;
     font-family: 'Itim', cursive;
     font-size: 10px;
-    align-items: flex-end;
+    /* align-items: flex-end; */
+    height: auto;
+    margin-top: auto;
+    position: relative;
     /* flex-grow: 1; */
 }
 
@@ -85,7 +95,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: flex-start; /* aligner en haut */
-    padding: 50px 0 100px;
+    padding: 50px 0 20px;
     font-size: 20px;
 }
 
@@ -141,6 +151,7 @@ footer {
 @media screen and (max-width: 1300px) {
     .contenu-footer {
         width: 700px;
+        /* permet de mettre a la ligne */
         flex-wrap: wrap;
     }
 
@@ -176,14 +187,6 @@ footer {
 }
 
 /* FIN F O O T E R */
-
-/* C A R O U S S E L */
-
-/* .carousel-item {
-    
-} */
-
-/* FIN C A R O U S S E L */
 
 
 /* A C C U E I L */
@@ -249,14 +252,23 @@ footer {
     background-color: #E9D2C0 !important;
 }
 
+.carouselD {
+    width: 60%;
+}
+
 
 /* FIN P R O D U I T */
 
 /* D É T A I L S  P R O D U I T S */
 
 .blocdétails {
+    display: block;
     background-color: #F5F5F5;
     padding: 30px;
+}
+
+.listeCatégorie {
+    font-family: 'Itim', cursive;
 }
 
 /* FIN D É T A I L S  P R O D U I T S */
@@ -364,6 +376,7 @@ legend {
     font-family: 'Montserrat', sans-serif;
     width: 50%;
     /* height: 30px; */
+    gap: 20px;
 }
 
 .mdpOublié {
@@ -409,3 +422,17 @@ legend {
 }
 
 /* FIN R E S E T  P A S S W O R D */
+
+/* P A N I E R */
+
+.panier {
+    font-family: 'Itim', cursive;
+    text-align: center;
+    margin-top: 70px;
+}
+ table {
+    margin-top: 40px;
+    font-family: 'Montserrat', sans-serif;   
+ }
+ 
+/* FIN P A N I E R 

@@ -6,11 +6,11 @@
     <main class="container">
         <section class="row">
             <div class="col-12">
-                <h1>Liste des produits de la catégorie {{ category.name }}</h1>
+                <h1 class="listeCatégorie"> Liste des produits de la catégorie {{ category.name }}.</h1>
             </div>
             {% if products is empty %}
                 <div class="col-12">
-                    <p> il n'y a pas de produit dans la catégorie {{ category.name }}.<p>
+                    <p> Il n'y a pas de produit dans la catégorie {{ category.name }}.<p>
                 </div>
             {% else %}
                 {% for product in products.data %}
@@ -27,7 +27,7 @@
                             {% endif %}    
                             <div class="card-body">
                                 <h2 class="card-title">{{ product.name }}</h2>
-                                <p class="card-text">{{ product.description|raw }}</p>
+                                {# <p class="card-text">{{ product.description|raw }}</p> #}
                                 <a href="{{ path('products_details', {"slug": product.slug }) }}"
                                 class="btn btn-secondary">Voir les détails</a>
                             </div>
