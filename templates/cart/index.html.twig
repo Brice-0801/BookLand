@@ -19,9 +19,9 @@
                         {% for element in data %}
                             <tr>
                                 <td>{{ element.product.name }}</td>
-                                <td>{{ element.product.price / 100 }} €</td>
+                                <td>{{ element.product.price }} €</td>
                                 <td>{{ element.quantity }}</td>
-                                <td>{{ element.quantity * element.product.price / 100 }} €</td>
+                                <td>{{ element.quantity * element.product.price}} €</td>
                                 <td>
                                     <a href="{{ path('cart_add', {id: element.product.id}) }}"
                                      class="btn btn-success">+</a>
@@ -40,7 +40,7 @@
                     <tfoot>
                         <tr>
                             <td colspan="3">Total</td>
-                            <td>{{ total / 100 }} €</td>
+                            <td>{{ total }} €</td>
                             <td>
                                 <a href="{{ path('cart_empty') }}" class="btn btn-danger">Vider</a>
                             </td>

@@ -244,6 +244,10 @@ footer {
     font-family: 'Montserrat', sans-serif;
 }
 
+.listeCatégorie {
+    font-family: 'Itim', cursive;
+}
+
 /* FIN C A T É G O R I E */
 
 /* P R O D U I T */
@@ -252,24 +256,33 @@ footer {
     background-color: #E9D2C0 !important;
 }
 
-.carouselD {
-    width: 60%;
+.nomProduit {
+    font-family: 'Itim', cursive;
 }
 
+.buttonAjoutPanier {
+    margin-top: 20px;
+}
 
 /* FIN P R O D U I T */
 
 /* D É T A I L S  P R O D U I T S */
 
-.blocdétails {
-    display: block;
-    background-color: #F5F5F5;
+.imgDetails {
+    width: 60%;
+    margin-bottom: 20px;
     padding: 30px;
 }
 
-.listeCatégorie {
-    font-family: 'Itim', cursive;
+.blocdétails {
+    border-radius: 20px;
+    display: block;
+    background-color: #F5F5F5;
+    padding: 30px;
+    font-family: 'Montserrat', sans-serif;
 }
+
+
 
 /* FIN D É T A I L S  P R O D U I T S */
 

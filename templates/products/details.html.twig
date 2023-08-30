@@ -8,25 +8,25 @@
     <main class="container">
         <section class="row">
             <div class="col-12">
-                <h1>{{ products.name }}</h1>
+                <h1 class="nomProduit">{{ products.name }}</h1>
             </div>
             <div class="col-6">
-                <div id="carouselExampleIndicators" class="carouselD slide" data-bs-ride="carousel">
+                {# <div id="carouselExampleIndicators" class="carouselD slide" data-bs-ride="carousel">
                     <div class="carousel-indicators">
                         {% for iteration in 1..products.images|length %}
                             <button type="button" data-bs-target="#carouselExampleIndicators" 
                             data-bs-slide-to="{{ iteration - 1 }}" {{ (loop.first ) ?'class="active" 
                             aria-current="true"' : '' }} aria-label="Slide {{ iteration }}"></button>
                         {% endfor %}
-                    </div>
-                    <div class="carousel-inner">
+                    </div> #}
+                    <div class="imgDetails">
                         {% for image in products.images %}
                             <div class="carousel-item {{ (loop.first ) ? 'active' : '' }}" data-bs-interval="2000">
                                 <img src="{{ asset('assets/uploads/products/') ~ image.name }}" class="d-block w-100" alt="{{ products.name }}">
                             </div>
                         {% endfor %}
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    {# <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
                     </button>
@@ -34,19 +34,22 @@
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
                     </button>
-                </div>
+                </div>#}
             </div>
-            </div>
+            </div> 
             <div class="col-6">
 
                <div class="blocdétails">
                    <p> Description : {{ products.description|raw }}</p>
-                   <p> Catégorie : {{ products.categories.name }}</p>
+                   <p> Catégorie : {{ products.categories }}</p>
                    <p> Prix : {{ products.price }} €</p>
+                   <p> Stock : {{ products.stock }} produits</p>
                 </div>
 
                       {% if products.stock > 0 %}
+                       <div class="buttonAjoutPanier">
                          <a href="{{ path('cart_add', {id: products.id}) }}" class="btn btn-secondary">Ajouter au panier</a>
+                       </div>  
                       {% else %}
                          <p class="text-danger">Temporairement en rupture de stock</p>
                       {% endif %}
