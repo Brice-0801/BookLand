@@ -368,8 +368,6 @@ span {
     padding: 20px;
     border-radius: 20px;
     font-family: 'Montserrat', sans-serif;
-    justify-content: center;
-    align-items: center;
 }
 
 
@@ -378,8 +376,7 @@ span {
     text-align: center;
 }
 
-.Map {
-   
+.Map {  
     text-align: center;
     margin-top: 30px;
     margin-left: 40px;
@@ -391,9 +388,12 @@ span {
     .formContact {
         width: 300px;       
     }
+    
     iframe {        
-        width: 240px;
+        /* width: 240px;
         height: 240px;
+        margin-bottom: 10px; */
+        display: none;
     }
 }
 
