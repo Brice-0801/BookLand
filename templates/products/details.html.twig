@@ -20,10 +20,8 @@
                         {% endfor %}
                     </div> #}
                     <div class="imgDetails">
-                        {% for image in products.images %}
-                            <div class="carousel-item {{ (loop.first ) ? 'active' : '' }}" data-bs-interval="2000">
-                                <img src="{{ asset('assets/uploads/products/') ~ image.name }}" class="d-block w-100" alt="{{ products.name }}">
-                            </div>
+                        {% for image in products.images %}                    
+                                <img src="{{ asset('assets/uploads/products/') ~ image.name }}" class="d-block w-100" alt="{{ products.name }}">          
                         {% endfor %}
                     </div>
                     {# <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">

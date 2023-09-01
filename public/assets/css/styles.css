@@ -75,7 +75,7 @@ a {
 /* F O O T E R */
 
 footer {
-    flex-shrink: 0;
+  
     border-top: 1px  #000;
     width: 100%;
     background-color: #40826D;
@@ -84,9 +84,8 @@ footer {
     font-size: 10px;
     /* align-items: flex-end; */
     height: auto;
-    margin-top: auto;
+    margin-top: 150px;
     position: relative;
-    /* flex-grow: 1; */
 }
 
 .contenu-footer {
@@ -148,6 +147,7 @@ footer {
     color: white;
 } */
 
+
 @media screen and (max-width: 1300px) {
     .contenu-footer {
         width: 700px;
@@ -198,12 +198,12 @@ footer {
 
 .Bannière {
     width: 50vw;
-    margin-top: 2%;
+    margin-top: 100px;
     border-radius: 20px;
 }
 
 .col-4 {
-    width: 10vw;
+    width: 12vw;
     height: 15vh;
     margin-top: 20px;
     border-radius: 20px;
@@ -212,7 +212,7 @@ footer {
     color: #FFF;
     font-size: 20px;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 500;
     line-height: normal;
     top: 30px;
     font-family: 'Montserrat', sans-serif;
@@ -226,6 +226,29 @@ footer {
     width: 30px;
     height: 35px;
     margin-top: 20px;
+}
+
+@media screen and (max-width: 800px) {   
+    .iconoffre {
+        margin-bottom: -17px;
+    }
+    .Bannière {
+        width: 300px;
+    }
+    .offre {
+        font-size: 10px;
+        margin-bottom: -40px;
+    } 
+    .col-4 {
+        width: 80px;
+        height: 90px;
+        font-size: 20px;     
+    }
+    .iconoffre {
+        width: 20px;
+        height: 35px;
+        margin-top: 20px;
+    }    
 }
 
 /* FIN A C C U E I L */
@@ -248,6 +271,7 @@ footer {
     font-family: 'Itim', cursive;
 }
 
+
 /* FIN C A T É G O R I E */
 
 /* P R O D U I T */
@@ -260,11 +284,22 @@ footer {
     font-family: 'Itim', cursive;
 }
 
-.buttonAjoutPanier {
-    margin-top: 20px;
+/* FIN P R O D U I T */
+
+/* L I S T E  P R O D U I T */
+
+
+@media screen and (max-width: 800px) {   
+    .card-title {
+        font-size: 10px;
+    }  
+    .buttonDetails {
+        width: 10px;
+        font-size: 10px;
+    }
 }
 
-/* FIN P R O D U I T */
+/* FIN L I S T E  P R O D U I T */
 
 /* D É T A I L S  P R O D U I T S */
 
@@ -282,7 +317,25 @@ footer {
     font-family: 'Montserrat', sans-serif;
 }
 
+.buttonAjoutPanier {
+    margin-top: 20px;
+}
 
+@media screen and (max-width: 800px) {   
+    .blocdétails {
+        width: 200px;
+        margin-left: -40px;
+        font-size: 5px;
+    } 
+     .imgDetails {
+        width: 100%; 
+        height: 80px;  
+        margin-left: -20px;  
+    } 
+    .buttonAjoutPanier {
+        margin-bottom: 50px;
+    }
+}
 
 /* FIN D É T A I L S  P R O D U I T S */
 
@@ -315,6 +368,8 @@ span {
     padding: 20px;
     border-radius: 20px;
     font-family: 'Montserrat', sans-serif;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -324,21 +379,29 @@ span {
 }
 
 .Map {
+   
     text-align: center;
     margin-top: 30px;
     margin-left: 40px;
+    display: inline-block;
 }
 
-.Map iframe {
-    display: block;
-    margin: 0 auto;   
+@media screen and (max-width: 800px) {   
+ 
+    .formContact {
+        width: 300px;       
+    }
+    iframe {        
+        width: 240px;
+        height: 240px;
+    }
 }
 
 /* FIN C O N T A C T */
 
 /* I N S C R I P T I O N */
 
-.Inscription {
+.Titreinscription {
     text-align: center;
     margin-top: 20px;
     font-family: 'Itim', cursive;
@@ -358,6 +421,15 @@ span {
     border-radius: 20px;
     width: 50%; 
     font-family: 'Montserrat', sans-serif;
+}
+
+@media screen and (max-width: 800px) {
+    .formInscription {
+       width: 700px;
+    }
+    legend {
+        font-size: 16px;
+    } 
 }
 
 /* FIN I N S C R I P T I O N */
@@ -420,8 +492,17 @@ legend {
     margin-bottom: 30px;
     padding: 30px;
     border-radius: 20px;
-    font-family: 'Montserrat', sans-serif;   
-    
+    font-family: 'Montserrat', sans-serif;      
+}
+
+@media screen and (max-width: 800px) {
+    .formProfil {
+       width: 700px;
+    }
+    legend {
+        font-size: 16px;
+    }
+  
 }
 
 /* FIN P R O F I L */
