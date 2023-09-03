@@ -1,17 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Itim&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&display=swap');
 
-/* html, body {
-    height: 100%;
-} */
-
- body {
-    /* background-color: aqua; */
-    /* display: flex;
-    flex-direction: column; */
-    /* flex-grow: 1; */
-    /* display: grid;
-    grid-template-columns: auto 1fr auto; */
-} 
 
 /* B A R R E  G R E E N */
 
@@ -386,9 +374,9 @@ span {
 @media screen and (max-width: 800px) {   
  
     .formContact {
-        width: 300px;       
+        width: 350px;       
     }
-    
+
     iframe {        
         /* width: 240px;
         height: 240px;
@@ -470,6 +458,28 @@ legend {
 }
 
 /* FIN C O N N E C T I O N */
+
+/* R E S E T  P A S S W O R D */
+
+.centerForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.FormResetPassword{
+    background-color: #F5F5F5;
+    margin-top: 70px;
+    margin-bottom: 70px;
+    padding: 30px;
+    border-radius: 20px;
+    font-family: 'Montserrat', sans-serif;
+    width: 50%;
+    /* height: 30px; */
+    gap: 20px;
+}
+
+/* FIN R E S E T  P A S S W O R D */
 
 /* P R O F I L */
 

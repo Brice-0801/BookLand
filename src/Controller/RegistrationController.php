@@ -26,7 +26,7 @@ class RegistrationController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // encode the plain password
+            // Hash le mot de passe
             $user->setPassword(
             $userPasswordHasher->hashPassword(
                     $user,
@@ -35,8 +35,8 @@ class RegistrationController extends AbstractController
             );
 
             $entityManager->persist($user);
+            // enregistrer les changements apportés aux objets dans la base de données
             $entityManager->flush();
-            // do anything else you need here, like send an email
 
             // On génère le JWT de l'utilisateur
             // On crée le Header
@@ -45,7 +45,7 @@ class RegistrationController extends AbstractController
                 'alg' => 'HS256'
             ];
 
-            // On crée le Payload
+            // variable qui stocke une structure de données
             $payload = [
                 'user_id' => $user->getId()
             ];

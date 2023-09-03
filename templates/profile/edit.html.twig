@@ -12,19 +12,15 @@
 				class="col">
 				{# Variable pour le front dynamique #}
 				{% set currentHour = "now"|date("H") %}
-				{% if currentHour < 20 %}
-					<h1 class="Profil">
+				<h1 class="Profil">
+					{% if currentHour < 20 %}
 						Bonjour,
-						{{ (app.user.lastname) }}
-						{{ (app.user.firstname) }}
-					</h1>
-				{% else %}
-					<h1 class="Profil">
+					{% else %}
 						Bonsoir,
-						{{ (app.user.lastname) }}
-						{{ (app.user.firstname) }}
-					</h1>
-				{% endif %}
+					{% endif %}
+					{{ (app.user.lastname) }}
+					{{ (app.user.firstname) }}
+				</h1>
 				{# Variable pour le front dynamique #}
 				<div class="centerForm">
 					<div class="formProfil">

@@ -49,13 +49,13 @@ class DashboardController extends AbstractDashboardController
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa-solid fa-house-chimney');
 
-        // yield MenuItem::section('Categories');
+        // yield utilisé pour générer des valeurs à partir d'une fonction ou d'une méthode. 
         yield MenuItem::linkToCrud('Users', 'fa-solid fa-circle-user', Users::class);
         yield MenuItem::linkToCrud('Categories', 'fa-solid fa-folder-open', Categories::class);
         yield MenuItem::linkToCrud('Products', 'fa-solid fa-book', Products::class);      
         yield MenuItem::linkToCrud('Images', 'fa-regular fa-image', Images::class);
         yield MenuItem::linkToCrud('Orders', 'fa-solid fa-cart-plus', Orders::class);
-        yield MenuItem::linkToCrud('OrdersDetails', 'fa-solid fa-circle-info', OrdersDetails::class);
+        // yield MenuItem::linkToCrud('OrdersDetails', 'fa-solid fa-circle-info', OrdersDetails::class);
         yield MenuItem::linkToCrud('Contact', 'fa fa-envelope', Contact::class);
     }
 }

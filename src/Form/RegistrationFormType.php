@@ -17,7 +17,8 @@ use Symfony\Component\Validator\Constraints\NotBlank;
 class RegistrationFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
-    {
+    {   
+        // $builder pour décrire les champs du formulaire
         $builder
             ->add('email', EmailType::class, [
                 'attr' => [
@@ -59,14 +60,14 @@ class RegistrationFormType extends AbstractType
                 'mapped' => false,
                 'constraints' => [
                     new IsTrue([
-                        'message' => 'You should agree to our terms.',
+                        'message' => 'Veuillez acceptez pour continuer',
                     ]),
                 ],
                 'label' => 'En m\'inscrivant à ce site j\'accepte les conditions d\'utilisation.'
             ])
             ->add('plainPassword', PasswordType::class, [
-                // instead of being set onto the object directly,
-                // this is read and encoded in the controller
+                // au lieu d'être placé directement sur l'objet,
+                // ceci est lu et codé dans le contrôleur
                 'mapped' => false,
                 'attr' => [
                     'autocomplete' => 'new-password',
@@ -79,8 +80,7 @@ class RegistrationFormType extends AbstractType
                     new Length([
                         'min' => 4,
                         'minMessage' => 'Votre mot de passe doit faire au moins {{ limit }} characters',
-                        // max length allowed by Symfony for security reasons
-                        'max' => 4096,
+                        'max' => 20,
                     ]),
                 ],
                 'label' => 'Mot de passe'
@@ -89,8 +89,9 @@ class RegistrationFormType extends AbstractType
     }
 
     public function configureOptions(OptionsResolver $resolver): void
-    {
+    {   // options par défaut pour le formulaire
         $resolver->setDefaults([
+        //  date indique la classe d'objet à laquelle les données du formulaire seront liées
             'data_class' => Users::class,
         ]);
     }

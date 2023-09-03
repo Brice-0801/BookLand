@@ -21,7 +21,8 @@ class ProfileController extends AbstractController
 
         // Créer le formulaire en passant l'utilisateur comme données
         $form = $this->createForm(AccountType::class, $user);
-
+        
+        // traite la requête en fonction des règles de validation et de configuration définies dans l'objet de formulaire
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
